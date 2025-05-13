@@ -1,7 +1,8 @@
 import React from "react";
 import { FaHome, FaUser, FaFileAlt, FaBriefcase, FaPhone } from "react-icons/fa";
 
-const AboutMe = () => {
+export default function AboutMe({ scrollToSection, targetRef1, targetRef2, targetRef3, targetRef4, targetRef5 }) {
+
     return (
         <div className="flex h-screen bg-gray-200">
             {/* Sidebar */}
@@ -9,20 +10,20 @@ const AboutMe = () => {
                 <img
                     src={"/image.png"}
                     alt="Profile"
-                    className="rounded-full border-4 border-white w-40 h-40 object-cover"
+                    className="rounded-full border-4 border-white w-50 h-50 object-cover"
                 />
-                <nav className="mt-10 w-full h-[100%] flex flex-col items-center py-4 space-y-4 bg-amber-400 text-lg font-bold">
+                <nav className="mt-10 w-full h-[100%] flex flex-col items-center py-4 space-y-8 bg-amber-400 text-2xl font-bold">
                     <div>
                         <div className=" w-3 h-3 bg-black rounded-full z-10"></div>
                         <div className=" w-1 h-6 mx-1 bg-black z-10"></div>
                     </div>
 
 
-                    <div className="text-black cursor-pointer">HOME</div>
-                    <div className="text-white underline">ABOUT ME</div>
-                    <div className="text-black cursor-pointer">RESUME</div>
-                    <div className="text-black cursor-pointer">PORTFOLIO</div>
-                    <div className="text-black cursor-pointer">CONTACT</div>
+                    <button onClick={() =>{scrollToSection(targetRef1)}} className="text-black cursor-pointer">HOME</button>
+                    <button onClick={() =>{scrollToSection(targetRef2)}} className="text-white underline">ABOUT ME</button>
+                    <button onClick={() =>{scrollToSection(targetRef3)}} className="text-black cursor-pointer">RESUME</button>
+                    <button onClick={() =>{scrollToSection(targetRef4)}} className="text-black cursor-pointer">PORTFOLIO</button>
+                    <button onClick={() =>{scrollToSection(targetRef5)}} className="text-black cursor-pointer">CONTACT</button>
 
                     <div>
                         <div className=" w-1 h-6 mx-1 bg-black z-10"></div>
@@ -41,10 +42,10 @@ const AboutMe = () => {
                     <h1 className="text-6xl font-black text-gray-800 mb-4">ABOUT ME</h1>
                 </div>
 
-                <h2 className="text-lg font-serif  text-black">
-                    I'm <span className="text-black font-bold text-3xl font-mono">HC SAVIN</span>, GRAPHIC DESIGNER / VIDEO EDITOR
+                <h2 className="text-xl font-serif  text-black">
+                    I'm <span className="text-black font-bold text-4xl font-mono">HC SAVIN</span>, GRAPHIC DESIGNER / VIDEO EDITOR
                 </h2>
-                <p className="mt-4 text-gray-800 text-sm font-serif">
+                <p className="mt-4 text-gray-800 text-lg font-serif">
                     I’m passionate about bringing creative ideas to life through design and visual
                     storytelling. With hands-on experience in tools like Adobe Photoshop, Premiere Pro,
                     and Illustrator, I focus on crafting visuals that are bold, clean, and impactful.
@@ -60,44 +61,44 @@ const AboutMe = () => {
 
                     <div className="grid grid-cols-2 gap-8 mt-6">
                         <div className="flex items-start">
-                            <div className="text-2xl bg-amber-400 p-4 w-16 h-16 rounded-full  mr-4">🖨️</div>
+                            <div className="text-4xl bg-amber-400 p-4 w-20 h-20 rounded-full  mr-4">🖨️</div>
                             <div>
-                                <h4 className="font-bold text-black text-lg">Print Design</h4>
+                                <h4 className="font-bold text-black text-xl">Print Design</h4>
                                 <div className=" w-28 h-0.5  bg-black z-10"></div>
-                                <p className="text-gray-700 text-sm font-serif">
+                                <p className="text-gray-700 text-lg font-serif">
                                     I design clean and impactful print materials like brochures, business cards, and packaging.
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex items-start">
-                            <div className="text-2xl bg-amber-400 p-4 w-16 h-16 rounded-full  mr-4">💻</div>
+                            <div className="text-4xl bg-amber-400 p-4 w-20 h-20 rounded-full  mr-4">💻</div>
                             <div>
                                 <h4 className="font-bold text-lg text-black">Web Layout Design</h4>
                                 <div className=" w-44 h-0.5  bg-black z-10"></div>
-                                <p className="text-gray-700 text-sm font-serif">
+                                <p className="text-gray-700 text-lg font-serif">
                                     I design sleek, user-friendly web layouts that blend style with smooth user experience.
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex items-start">
-                            <div className="text-2xl bg-amber-400 p-4 w-16 h-16 rounded-full  mr-4">🗓️</div>
+                            <div className="text-4xl bg-amber-400 p-4 w-20 h-20 rounded-full  mr-4">🗓️</div>
                             <div>
                                 <h4 className="font-bold text-lg text-black">Posters & Flyers</h4>
                                 <div className=" w-36 h-0.5  bg-black z-10"></div>
-                                <p className="text-gray-700 text-sm font-serif">
+                                <p className="text-gray-700 text-lg font-serif">
                                     I create bold and engaging posters and flyers that grab attention and deliver the message at a glance.
                                 </p>
                             </div>
                         </div>
 
                         <div className="flex items-start">
-                            <div className="text-2xl bg-amber-400 p-4 w-16 h-16 rounded-full  mr-4">📱</div>
+                            <div className="text-4xl bg-amber-400 p-4 w-20 h-20 rounded-full  mr-4">📱</div>
                             <div>
                                 <h4 className="font-bold text-lg text-black">Social Media Posters</h4>
                                 <div className=" w-44 h-0.5  bg-black z-10"></div>
-                                <p className="text-gray-700 text-sm font-serif">
+                                <p className="text-gray-700 text-lg font-serif">
                                     I craft visually striking content optimized for digital platforms to boost online presence and engagement.
                                 </p>
                             </div>
@@ -106,48 +107,47 @@ const AboutMe = () => {
                 </div>
             </div>
             {/* side bar */}
-            <div className="flex flex-col items-center bg-gray-200 py-28 w-fit px-2">
+            <div className="flex flex-col items-center bg-gray-200 py-28 w-fit pr-6">
                 {/* Home Icon */}
-                <div className="flex flex-col items-center">
-                    <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-xl">
-                        <FaHome className="text-yellow-500" />
+                <button onClick={() =>{scrollToSection(targetRef1)}}  className="flex flex-col items-center">
+                    <div className="w-15 h-15 rounded-full bg-black flex items-center justify-center text-xl">
+                        <FaHome className="  text-yellow-500 text-2xl hover:cursor-pointer" />
                     </div>
-                    <div className="w-0.5 h-8 bg-black"></div>
-                </div>
+                    <div className="w-1 h-10 bg-black"></div>
+                </button>
 
                 {/* User Icon */}
-                <div className="flex flex-col items-center">
-                    <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-xl">
-                        <FaUser className="text-white" />
+                <button onClick={() =>{scrollToSection(targetRef2)}}  className="flex flex-col items-center">
+                    <div className="w-15 h-15 rounded-full bg-black flex items-center justify-center text-xl">
+                        <FaUser className="text-white text-2xl hover:cursor-pointer" />
                     </div>
-                    <div className="w-0.5 h-8 bg-black"></div>
-                </div>
+                    <div className="w-1 h-10 bg-black"></div>
+                </button>
 
                 {/* Resume Icon */}
-                <div className="flex flex-col items-center">
-                    <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-xl">
-                        <FaFileAlt className="text-yellow-500" />
+                <button onClick={() =>{scrollToSection(targetRef3)}}  className="flex flex-col items-center">
+                    <div className="w-15 h-15 rounded-full bg-black flex items-center justify-center text-xl">
+                        <FaFileAlt className="text-yellow-500 text-2xl hover:cursor-pointer" />
                     </div>
-                    <div className="w-0.5 h-8 bg-black"></div>
-                </div>
+                    <div className="w-1 h-10 bg-black"></div>
+                </button>
 
                 {/* Portfolio Icon */}
-                <div className="flex flex-col items-center">
-                    <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-xl">
-                        <FaBriefcase className="text-yellow-500" />
+                <button onClick={() =>{scrollToSection(targetRef4)}}  className="flex flex-col items-center">
+                    <div className="w-15 h-15 rounded-full bg-black flex items-center justify-center text-xl">
+                        <FaBriefcase className="text-yellow-500 text-2xl hover:cursor-pointer" />
                     </div>
-                    <div className="w-0.5 h-8 bg-black"></div>
-                </div>
+                    <div className="w-1 h-10 bg-black"></div>
+                </button>
 
                 {/* Contact Icon */}
-                <div className="flex flex-col items-center">
-                    <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-xl">
-                        <FaPhone className="text-yellow-500" />
+                <button onClick={() =>{scrollToSection(targetRef5)}}  className="flex flex-col items-center">
+                    <div className="w-15 h-15 rounded-full bg-black flex items-center justify-center text-xl">
+                        <FaPhone className="text-yellow-500 text-2xl hover:cursor-pointer" />
                     </div>
-                </div>
+                </button>
             </div>
         </div>
     );
 };
 
-export default AboutMe;
