@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { FaHome, FaUser, FaIdBadge, FaBriefcase, FaPhone } from "react-icons/fa";
 
