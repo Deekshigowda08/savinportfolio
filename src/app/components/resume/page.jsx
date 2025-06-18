@@ -10,35 +10,7 @@ import {
 } from "react-icons/fa";
 
 function ResumeUploadPage({scrollToSection, targetRef1, targetRef2, targetRef3, targetRef4, targetRef5}) {
-  const [pdfLinks, setPdfLinks] = useState([]);
-  const [status, setStatus] = useState("loading");
 
-  useEffect(() => {
-    const fetchResume = async () => {
-      try {
-        const res = await fetch(`/api?name=resume`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-
-        const result = await res.json();
-
-        if (result.pdfLink) {
-          setPdfLinks([result.pdfLink]); // Ensure it's an array for easier handling
-          setStatus("loaded");
-        } else {
-          setStatus("empty");
-        }
-      } catch (err) {
-        console.error("Failed to fetch resume:", err);
-        setStatus("error");
-      }
-    };
-
-    fetchResume();
-  }, []);
 
   return (
     <div className="flex h-screen bg-gray-300">
@@ -80,26 +52,12 @@ function ResumeUploadPage({scrollToSection, targetRef1, targetRef2, targetRef3, 
 
         {/* Display PDF or Message */}
         <div className="w-2/3 h-[500px] bg-gray-400 border-2 ml-36 border-black rounded-2xl flex justify-center items-center p-4 overflow-hidden">
-          {status === "loading" && (
-            <p className="text-white font-semibold">Loading...</p>
-          )}
-
-          {status === "empty" && (
-            <p className="text-white font-semibold">No file found</p>
-          )}
-
-          {status === "loaded" && pdfLinks.length > 0 && (
             <>
-              <a href={pdfLinks[0]} target="_blank" rel="noopener noreferrer">
+              <a href="https://drive.google.com/drive/folders/1-3QIC55HrM3u5kmM164ap192pQJ-TCBd" target="_blank" rel="noopener noreferrer">
                 <FaFileAlt className="text-white text-9xl cursor-pointer mt-4" />
                 <h1 className="text-xl ml-4 mt-4 font-bold">Click here</h1>
               </a>
             </>
-          )}
-
-          {status === "error" && (
-            <p className="text-red-600 font-semibold">Error loading resume.</p>
-          )}
         </div>
       </div>
 

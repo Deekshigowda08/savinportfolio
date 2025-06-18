@@ -25,7 +25,7 @@ export default function WelcomePage({scrollToSection, targetRef1, targetRef2, ta
         READY TO HANDEL YOUR NEW PROJ
       </div>
       <p className="text-black font-serif  text-lg">
-        A graphic designer and video editor passionate about bringing creative ideas to life. With expertise in Adobe Photoshop, Adobe Premiere Pro, and Adobe Illustrator, I craft compelling visuals and cinematic videos that engage and inspire. Whether designing logos, editing videos, or developing brand identities, I strive to create impactful, high-quality work that resonates with the audience.
+        A graphic designer passionate about bringing creative ideas to life. With expertise in Adobe Photoshop, Adobe Premiere Pro, and Adobe Illustrator, I craft compelling visuals and cinematic videos that engage and inspire. Whether designing logos, editing videos, or developing brand identities, I strive to create impactful, high-quality work that resonates with the audience.
       </p>
       <button onClick={() => scrollToSection(targetRef2)} className="bg-black text-white py-4 px-8 rounded-full font-bold">
         MORE ABOUT ME

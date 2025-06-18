@@ -5,50 +5,36 @@ import { FaHome, FaUser, FaFileAlt, FaBriefcase, FaPhone } from "react-icons/fa"
 const App = ({ scrollToSection, targetRef1, targetRef2, targetRef3, targetRef4, targetRef5 }) => {
   const [activeTab, setActiveTab] = useState('all');
 
-  // Hooks for different categories
-  const [printImages, setPrintImages] = useState([]);
-  const [posterImages, setPosterImages] = useState([]);
-  const [webImages, setWebImages] = useState([]);
-  const [socialImages, setSocialImages] = useState([]);
-  const [randomImages, setRandomImages] = useState([]);
-  const [allImages, setAllImages] = useState([]);
+  const links={
+    all: "https://drive.google.com/drive/folders/1--ow-gZI2ks30dZ774sWp3OfCba27B_s",
+    print: "https://drive.google.com/drive/folders/1-H0XoVGqTOfMearPIvVFeo2lgxVkS_gU",
+    posters: "https://drive.google.com/drive/folders/1Vk7qRiNRmoWrcit0VbxEYvY3A7GysMGG?usp=drive_link",
+    web: "https://drive.google.com/drive/folders/1-UUa9b1ydjMCsRZkrCslr8Jf74jOxW7M",
+    social: "https://drive.google.com/drive/folders/1-KZL2I8qYNrgHohXrd9YY_J6WpQNhgzS",
+    random: "https://drive.google.com/drive/folders/1-V9NAJr5jhODUIh_bMxaKW1QXGyVQU6G"
+  }
 
-  useEffect(() => {
-    const fetchImages = async () => {
-      try {
-        const res = await fetch("/api/images");
-        const data = await res.json();
-        const collections = data.collections || {};
 
-        if (collections) {
-          setPrintImages(Object.keys(collections["printdesigns"][0] || {}).filter((key) => key !== "id").map((key) => collections["printdesigns"][0][key]));
-          setPosterImages(Object.keys(collections["posters&flyers"][0] || {}).filter((key) => key !== "id").map((key) => collections["posters&flyers"][0][key]));
-          setWebImages(Object.keys(collections["weblayoutdesign"][0] || {}).filter((key) => key !== "id").map((key) => collections["weblayoutdesign"][0][key]));
-          setSocialImages(Object.keys(collections["socialmediaposter"][0] || {}).filter((key) => key !== "id").map((key) => collections["socialmediaposter"][0][key]));
-          setRandomImages(Object.keys(collections["rondomworks"][0] || {}).filter((key) => key !== "id").map((key) => collections["rondomworks"][0][key]));
-          setAllImages([
-            ...Object.keys(collections["printdesigns"][0] || {}).filter((key) => key !== "id").map((key) => collections["printdesigns"][0][key]),
-            ...Object.keys(collections["posters&flyers"][0] || {}).filter((key) => key !== "id").map((key) => collections["posters&flyers"][0][key]),
-            ...Object.keys(collections["weblayoutdesign"][0] || {}).filter((key) => key !== "id").map((key) => collections["weblayoutdesign"][0][key]),
-            ...Object.keys(collections["socialmediaposter"][0] || {}).filter((key) => key !== "id").map((key) => collections["socialmediaposter"][0][key]),
-            ...Object.keys(collections["rondomworks"][0] || {}).filter((key) => key !== "id").map((key) => collections["rondomworks"][0][key])
-          ]);
-        }
-      } catch (err) {
-        console.error("Error fetching images:", err);
-      }
-    };
 
-    fetchImages();
-  }, []);
+  const getActive = () => {
+    switch (activeTab) {
+      case "print": return "Print Images";
+      case "posters": return "Poster Images";
+      case "web": return "Web Design";
+      case "social": return "Media Poster";
+      case "random": return "Random Works";
+      case "all": return "All Works";
+      default: return [];
+    }
+  };
 
   const getActiveImages = () => {
     switch (activeTab) {
       case "print": return printImages;
       case "posters": return posterImages;
-      case "Web": return webImages;
-      case "Social Media Poster": return socialImages;
-      case "Rondom Works": return randomImages;
+      case "web": return webImages;
+      case "social": return socialImages;
+      case "random": return randomImages;
       case "all": return allImages;
       default: return [];
     }
@@ -89,29 +75,21 @@ const App = ({ scrollToSection, targetRef1, targetRef2, targetRef3, targetRef4, 
 
         {/* Tabs */}
         <div className="mb-4 flex text-lg font-bold gap-4">
-          {['all', 'print', 'posters', 'Web', 'Social Media Poster', 'Rondom Works'].map((tab) => (
+          {['all', 'print', 'posters', 'web', 'social', 'random'].map((tab) => (
             <button key={tab} onClick={() => setActiveTab(tab)} className={`px-4 py-2 rounded-full ${activeTab === tab ? 'bg-amber-400 text-white' : 'text-black'}`}>
-              {tab === 'all' ? 'ALL' : tab === 'print' ? 'Print Designs' : tab === 'posters' ? 'Posters & Flyers' : tab === 'Web' ? 'Web Layout Design' : tab === 'Social Media Poster' ? 'Social Media Poster' : 'Random Works'}
+              {tab === 'all' ? 'ALL' : tab === 'print' ? 'Print Designs' : tab === 'posters' ? 'Posters & Flyers' : tab === 'web' ? 'Web Layout Design' : tab === 'social' ? 'Social Media Poster' : 'Random Works'}
             </button>
           ))}
         </div>
 
-        {/* File Icon Redirect Section */}
-        <div className="grid grid-cols-4 gap-4">
-          {getActiveImages().length > 0 ? (
-            getActiveImages().map((link, idx) => {
-              return (
-                <div key={idx} className="h-40 bg-gray-400 border border-black rounded-md flex items-center justify-center">
-                  <a href={link} target="_blank" rel="noopener noreferrer">
-                    <FaFileAlt className="text-white text-4xl ml-3 cursor-pointer" />
-                    <h1 className="text-xs mt-2 font-bold">Click here</h1>
-                  </a>
-                </div>
-              );
-            })
-          ) : (
-            <p className="col-span-4 text-center text-white font-bold">No file to show</p>
-          )}
+        {/* Display links path */}
+        <div className="w-2/3 h-[500px] bg-gray-400 border-2 ml-36 border-black rounded-2xl flex justify-center items-center p-4 overflow-hidden">
+            <>
+              <a href={links[activeTab]} target="_blank" rel="noopener noreferrer">
+                <FaFileAlt className="text-black  text-9xl cursor-pointer mt-4 text-center ml-20" />
+                <h1 className="text-md mt-4 text-center font-bold">{`Click here to see ${getActive()} works`}</h1>
+              </a>
+            </>
         </div>
       </div>
 

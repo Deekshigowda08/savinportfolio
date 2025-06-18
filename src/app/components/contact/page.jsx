@@ -43,32 +43,32 @@ const Contact = ({scrollToSection, targetRef1, targetRef2, targetRef3, targetRef
                 </div>
         <h2 className="text-2xl font-bold mb-10 ml-20 text-gray-700">Feel <span className="text-black text-2xl font-extrabold">FREE</span> To Contact Me !</h2>
 
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid grid-cols-3 gap-8">
           {/* Email */}
-          <div className="flex flex-col items-center">
+          <a href="mailto:uzumakivisualss@gmail.com" className="flex flex-col items-center">
             <div className="bg-amber-400 p-6 rounded-full">
               <FaEnvelope className="text-7xl text-black" />
             </div>
             <p className="mt-4 text-black font-semibold text-lg">uzumakivisualss@gmail.com</p>
             <p className="text-black font-semibold text-lg">savinsavihc@gmail.com</p>
-          </div>
+          </a>
 
           {/* WhatsApp */}
-          <div className="flex flex-col items-center">
+          <a href="https://wa.me/919019979289" className="flex flex-col items-center">
             <div className="bg-amber-400 p-6 rounded-full">
               <FaWhatsapp className="text-7xl text-black" />
             </div>
             <p className="mt-4 text-black font-semibold text-lg">+91 9019979289</p>
-          </div>
+          </a>
 
           {/* Instagram */}
-          <div className="flex flex-col items-center">
+          <a href="https://www.instagram.com/uzumaki_visualss" className="flex flex-col items-center">
             <div className="bg-amber-400 p-6 rounded-full">
               <FaInstagram className="text-7xl text-black" />
             </div>
             <p className="mt-4 text-black font-semibold text-lg">@uzumaki_visualss</p>
-            <a href="https://www.instagram.com/uzumaki_visualss" className="text-black text-md font-semibold">https://www.instagram.com/uzumaki_visualss</a>
-          </div>
+            <p  className="text-black text-md font-semibold">https://www.instagram.com/uzumaki_visualss</p>
+          </a>
         </div>
       </div>
       <div className="flex flex-col items-center bg-gray-300 py-28 w-fit pr-6">
