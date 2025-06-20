@@ -44,11 +44,11 @@ export default function AboutMe({ scrollToSection, targetRef1, targetRef2, targe
                 </div>
 
                 <h2 className="text-xl font-serif  text-black">
-                    I'm <span className="text-black font-bold text-4xl font-mono">HC SAVIN</span>, GRAPHIC DESIGNER / VIDEO EDITOR
+                    I'm <span className="text-black font-bold text-4xl font-mono">HC SAVIN</span>, GRAPHIC DESIGNER
                 </h2>
                 <p className="mt-4 text-gray-800 text-lg font-serif">
                     I’m passionate about bringing creative ideas to life through design and visual
-                    storytelling. With hands-on experience in tools like Adobe Photoshop, Premiere Pro,
+                    storytelling. With hands-on experience in tools like Adobe Photoshop
                     and Illustrator, I focus on crafting visuals that are bold, clean, and impactful.
                     I’m also currently exploring After Effects to level up my motion design skills.
                     Creativity drives me, and I’m always looking to push boundaries and grow as an artist.

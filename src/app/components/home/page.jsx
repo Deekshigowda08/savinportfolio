@@ -19,13 +19,13 @@ export default function WelcomePage({scrollToSection, targetRef1, targetRef2, ta
         I'M <span className="text-amber-400">HC SAVIN</span>
       </h1>
       <div className="bg-amber-400 text-black font-bold py-2 px-4 inline-block">
-        GRAPHIC DESIGNER / VIDEO EDITOR
+        GRAPHIC DESIGNER 
       </div>
       <div className="bg-black text-white font-bold py-2 px-4 inline-block">
         READY TO HANDEL YOUR NEW PROJ
       </div>
       <p className="text-black font-serif  text-lg">
-        A graphic designer passionate about bringing creative ideas to life. With expertise in Adobe Photoshop, Adobe Premiere Pro, and Adobe Illustrator, I craft compelling visuals and cinematic videos that engage and inspire. Whether designing logos, editing videos, or developing brand identities, I strive to create impactful, high-quality work that resonates with the audience.
+        A graphic designer passionate about bringing creative ideas to life. With expertise in Adobe Photoshop, and Adobe Illustrator, I craft compelling visuals  that engage and inspire. Whether designing logos or developing brand identities, I strive to create impactful, high-quality work that resonates with the audience.
       </p>
       <button onClick={() => scrollToSection(targetRef2)} className="bg-black text-white py-4 px-8 rounded-full font-bold">
         MORE ABOUT ME
@@ -40,11 +40,11 @@ export default function WelcomePage({scrollToSection, targetRef1, targetRef2, ta
         <div className="absolute right-28 bottom-44  w-45 h-92 border-4 border-yellow-300 rounded-r-full border-l-0 z-0"></div>
 
         {/* Icons along the arc */}
-        <button onClick={() =>{scrollToSection(targetRef1)}} className="absolute top-41 right-56 text-yellow-500"><FaHome className="bg-yellow-600 text-black p-2 rounded-full w-10 h-10" /></button>
-        <button onClick={() => scrollToSection(targetRef2)} className="absolute top-58 right-32  text-yellow-500"><FaUser className="bg-black text-white p-2 rounded-full w-10 h-10" /></button>
-        <button onClick={() => scrollToSection(targetRef3)} className="absolute top-86 right-24   text-yellow-500"><FaIdBadge className="bg-black text-white p-2 rounded-full w-10 h-10" /></button>
-        <button onClick={() => scrollToSection(targetRef4)} className="absolute bottom-54 right-35  text-yellow-500"><FaBriefcase className="bg-black text-white p-2 rounded-full w-10 h-10" /></button>
-        <button onClick={() => scrollToSection(targetRef5)}className="absolute bottom-41 right-58 text-yellow-500"><FaPhone className="bg-black text-white p-2 rounded-full w-10 h-10" /></button>
+        <button onClick={() =>{scrollToSection(targetRef1)}} className="absolute top-41 right-56 text-yellow-500"><FaHome className="bg-yellow-600 text-black p-2 rounded-full hover:w-11 hover:h-11 hover:cursor-pointer  transition-all duration-300 w-10 h-10" /></button>
+        <button onClick={() => scrollToSection(targetRef2)} className="absolute top-58 right-32  text-yellow-500"><FaUser className="bg-black text-white p-2 rounded-full hover:cursor-pointer hover:w-11 hover:h-11 hover:top-58 hover:right-32 transition-all duration-300 w-10 h-10" /></button>
+        <button onClick={() => scrollToSection(targetRef3)} className="absolute top-86 right-24   text-yellow-500"><FaIdBadge className="bg-black text-white p-2  hover:cursor-pointer rounded-full hover:w-11 hover:h-11 hover:top-86 hover:right-24 transition-all duration-300 w-10 h-10" /></button>
+        <button onClick={() => scrollToSection(targetRef4)} className="absolute bottom-54 right-35  text-yellow-500"><FaBriefcase className="bg-black text-white p-2 hover:cursor-pointer rounded-full hover:w-11 hover:h-11 hover:bottom-54 hover:right-35 transition-all duration-300 w-10 h-10" /></button>
+        <button onClick={() => scrollToSection(targetRef5)}className="absolute bottom-41 right-58 text-yellow-500"><FaPhone className="bg-black text-white p-2 rounded-full hover:w-11 hover:h-11 hover:cursor-pointer hover:bottom-41 hover:right-58 transition-all duration-300 w-10 h-10" /></button>
 
         {/* Dots on Ends */}
         <div className="absolute top-42.5 left-80 w-4 h-4 bg-yellow-300 rounded-full z-10"></div>
